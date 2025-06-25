@@ -332,3 +332,80 @@ Excel is one of the most widely used spreadsheet tools for data analysis, offeri
 - =CONCATENATE(A2, " ", B2)    // Combines text from A2 and B2 with space
 - =LEFT(D2, 4)                 // Returns first 4 characters from D2
 
+
+### Data Cleaning and Preparation
+Data Cleaning and Preparation is a crucial step in the data analysis and machine learning pipeline. It involves transforming raw data into a clean and structured format so it can be effectively analyzed or used to train models.
+
+#### Real-world data is rarely perfect. It often contains:
+
+- Missing values
+
+- Incorrect or inconsistent formatting
+
+- Duplicate records
+
+- Outliers or invalid data entries
+
+
+###  Importing Data from Various Sources
+In real-world scenarios, data comes in different formats and from various sources like CSV files, Excel sheets, plain text files, or databases. The first step in data analysis is to import this raw data into a tool like Python using libraries such as pandas.
+
+- CSV Files: CSV (Comma-Separated Values) is a common format where data is separated by commas.
+
+
+    ![Screenshot (119)](https://github.com/user-attachments/assets/cbef9878-77e9-4bf7-bf4d-e8d7c5e608f8)
+
+- Text Files: Text files may use tabs (\t) or other delimiters instead of commas.
+
+
+    ![Screenshot (120)](https://github.com/user-attachments/assets/c92c08d3-466d-4853-8c9d-42d5a6604b4d)
+
+- Excel Files: Data stored in spreadsheets can be imported using:
+
+
+    ![Screenshot (121)](https://github.com/user-attachments/assets/0484454d-09b6-4db6-ad09-045a6653bb19)
+
+
+- Databases: Data can be retrieved using SQL queries through libraries like sqlite3, sqlalchemy, or pyodbc.
+
+
+    ![Screenshot (120)](https://github.com/user-attachments/assets/50ab147e-5c62-406d-9e89-6c73d1a11ab3)
+
+####  Data Cleaning Techniques
+Raw data is often messy and may contain inconsistencies, missing values, or duplicate records. Cleaning the data improves its quality and makes it usable for analysis or modeling.
+
+##### Handling Missing Values
+- Missing values occur when some data entries are left blank.
+
+- These can be:
+
+  - Dropped (if the missing data is small and not critical)
+
+  - Filled (using average, median, mode, or a default value)
+
+
+    ![Screenshot (121)](https://github.com/user-attachments/assets/54734147-0a48-4b5e-9146-055848d48abe)
+
+
+#### Removing Duplicates
+- Duplicate rows can affect the accuracy of analysis.
+
+- Use .drop_duplicates() to keep only unique records.
+
+  ![Screenshot (122)](https://github.com/user-attachments/assets/76c377f3-faa4-4212-a998-0cd1104beda8)
+
+
+### Data Validation and Error Checking
+- Even after cleaning, data must be validated to ensure it meets certain quality standards and logical rules.
+
+#### Data Type Validation
+- Ensure each column has the correct data type (e.g., int, float, datetime, string).
+
+    ![Screenshot (123)](https://github.com/user-attachments/assets/071e4ae8-38fa-457d-9a9e-583d9627da15)
+- Convert types when needed:
+
+    ![Screenshot (124)](https://github.com/user-attachments/assets/def99fd6-b34f-461d-9eea-0b559073983d)
+
+
+
+
