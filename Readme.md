@@ -441,8 +441,8 @@ This section covers some of the most commonly used Excel functions that help in 
 
 
 
-#### Data Sorting and Filtering
-##### Sorting Data
+### Data Sorting and Filtering
+#### Sorting Data
 
 ##### Sorting by a Single Column
 
@@ -461,7 +461,7 @@ In a sales dataset, you can sort the "Revenue" column in descending order to see
 
  ![Screenshot (125)](https://github.com/user-attachments/assets/f7c42a89-17ba-4c19-824f-e5657e8ba92f)
 
-#### Sorting by Multiple Columns
+### Sorting by Multiple Columns
 
 You can sort data based on more than one column to break ties and organize data hierarchically.
 
@@ -475,7 +475,7 @@ Click "Sort" > "Add Level" for multiple columns.
 ![Screenshot (126)](https://github.com/user-attachments/assets/153b44c3-da4a-4847-9a37-da01acd6f99b)
 ![Screenshot (128)](https://github.com/user-attachments/assets/abf4ea7a-65e4-4d16-8187-13de264d4ac2)
 
-#### Filtering Data
+### Filtering Data
 #### Basic Filtering
 
 - Basic filtering allows you to view only the rows that meet certain criteria.
@@ -528,7 +528,7 @@ Slicers are visual filtering tools that allow users to interactively filter repo
 - Use a slicer to filter sales data by year, region, or product category to see corresponding changes in visuals like bar charts or pie charts.
 
 
-#### Basic Data Visualization 
+### Basic Data Visualization 
 #### Creating and Formatting Charts
 - Charts are used to represent data visually, making it easier to understand trends, patterns, and comparisons.
 
