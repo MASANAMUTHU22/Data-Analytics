@@ -497,8 +497,11 @@ Advanced filters use multiple conditions (e.g., AND/OR logic).
 #### Excel:
 
 Use "Advanced Filter" under the "Data" tab.
-![Screenshot (130)](https://github.com/user-attachments/assets/ed05f148-b024-42c4-9272-e10905e8e685)
-![Screenshot (131)](https://github.com/user-attachments/assets/8565cdb1-393d-4ab8-8e5a-428727792740)
+  
+  
+  ![Screenshot (130)](https://github.com/user-attachments/assets/ed05f148-b024-42c4-9272-e10905e8e685)
+
+  ![Screenshot (131)](https://github.com/user-attachments/assets/8565cdb1-393d-4ab8-8e5a-428727792740)
 
 
 
