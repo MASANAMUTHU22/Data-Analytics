@@ -407,5 +407,173 @@ Raw data is often messy and may contain inconsistencies, missing values, or dupl
     ![Screenshot (124)](https://github.com/user-attachments/assets/def99fd6-b34f-461d-9eea-0b559073983d)
 
 
+### Basic Functions and Formulas 
+This section covers some of the most commonly used Excel functions that help in data analysis, calculations, and data cleaning.
+
+#### Commonly Used Functions
+
+| Function   | Description                         | Example            |
+|------------|-------------------------------------|------------------  |
+| `SUM()`    | Adds a range of numbers             | `=SUM(A1:A5)`      |
+| `AVERAGE()`| Calculates the mean of numbers      | `=AVERAGE(B1:B10)` |
+| `COUNT()`  | Counts the number of numeric values | `=COUNT(C1:C10)`   |
+| `MIN()`    | Finds the smallest number           | `=MIN(D1:D10)`     |
+| `MAX()`    | Finds the largest number            | `=MAX(E1:E10)`     |
+
+####  Logical Functions
+- Logical functions are used to make decisions based on conditions.
+
+| Function | Description                                   | Example                             |
+|----------|-----------------------------------------------|--------------------------------     |
+| `IF()`   | Returns one value if condition is TRUE, else another | `=IF(A1>50, "Pass", "Fail")` |
+| `AND()`  | Returns TRUE if all conditions are true       | `=AND(A1>50, B1<100)`               |
+| `OR()`   | Returns TRUE if any condition is true         | `=OR(A1>50, B1<100)`                |
+
+####  Text Functions
+- Used for manipulating and combining text strings.
+
+| Function         | Description                                | Example                                   |
+|------------------|--------------------------------------------|-------------------------------------------|
+| `LEFT()`         | Extracts a number of characters from the start | `=LEFT("Excel", 2)` → `"Ex"`          |
+| `RIGHT()`        | Extracts from the end                      | `=RIGHT("Excel", 3)` → `"cel"`            |
+| `MID()`          | Extracts from the middle                   | `=MID("Excel", 2, 3)` → `"xce"`           |
+| `CONCATENATE()` (or `CONCAT()`) | Joins text strings            | `=CONCATENATE(A1, " ", B1)`             |
+
+
+
+#### Data Sorting and Filtering
+##### Sorting Data
+
+##### Sorting by a Single Column
+
+Sorting means arranging data in a particular order based on the values in a column.
+
+#### Example:
+In a sales dataset, you can sort the "Revenue" column in descending order to see the highest-grossing entries at the top.
+
+#### Excel:
+
+- Select the column.
+
+- Go to the "Data" tab.
+
+- Click "Sort A-Z" or "Sort Z-A".
+
+ ![Screenshot (125)](https://github.com/user-attachments/assets/f7c42a89-17ba-4c19-824f-e5657e8ba92f)
+
+#### Sorting by Multiple Columns
+
+You can sort data based on more than one column to break ties and organize data hierarchically.
+
+#### Example:
+Sort by "Region" (A-Z) and then by "Sales" (High to Low).
+
+#### Excel:
+
+Click "Sort" > "Add Level" for multiple columns.
+
+![Screenshot (126)](https://github.com/user-attachments/assets/153b44c3-da4a-4847-9a37-da01acd6f99b)
+![Screenshot (128)](https://github.com/user-attachments/assets/abf4ea7a-65e4-4d16-8187-13de264d4ac2)
+
+#### Filtering Data
+#### Basic Filtering
+
+- Basic filtering allows you to view only the rows that meet certain criteria.
+
+#### Excel:
+
+Select the header.
+
+Use the filter dropdown to select specific values or ranges.
+
+![Screenshot (129)](https://github.com/user-attachments/assets/483ea9dd-1ea4-4769-8027-d86797bcdd0d)
+
+#### Advanced Filtering
+
+Advanced filters use multiple conditions (e.g., AND/OR logic).
+
+#### Example: Filter rows where Region is 'West' AND Revenue > 1000.
+
+#### Excel:
+
+Use "Advanced Filter" under the "Data" tab.
+![Screenshot (130)](https://github.com/user-attachments/assets/ed05f148-b024-42c4-9272-e10905e8e685)
+![Screenshot (131)](https://github.com/user-attachments/assets/8565cdb1-393d-4ab8-8e5a-428727792740)
+
+
+
+
+#### Using Slicers for Interactive Filtering:
+
+Slicers are visual filtering tools that allow users to interactively filter reports.
+
+#### Power BI / Excel Pivot Table:
+
+- Insert a Slicer from the "Insert" tab.
+
+- Connect it to your table or pivot table.
+
+- Click buttons to filter data dynamically.
+
+#### Benefits:
+
+- Easy to use.
+
+- Visual representation of filtering.
+
+- Can be used with charts and dashboards for dynamic analysis.
+
+#### Example Use Case:
+
+- Use a slicer to filter sales data by year, region, or product category to see corresponding changes in visuals like bar charts or pie charts.
+
+
+#### Basic Data Visualization 
+#### Creating and Formatting Charts
+- Charts are used to represent data visually, making it easier to understand trends, patterns, and comparisons.
+
+#### Bar Chart
+- Purpose: Compare values across categories.
+
+- Example: Comparing monthly sales in different regions.
+
+- Key Elements: X-axis (categories), Y-axis (values), bars.
+
+#### Example:
+
+![Screenshot (132)](https://github.com/user-attachments/assets/1382451d-0c20-43db-9c12-31c0da97b9f7)
+
+![Screenshot (133)](https://github.com/user-attachments/assets/46b3a070-8962-46f1-8284-8ec4731d4aed)
+
+#### Line Chart
+- Purpose: Show trends or changes over time or sequence.
+
+- Example: Visualizing glucose levels across patient index.
+
+- Formatting: You can use markers, different line styles, legends, and labels.
+
+  ![Screenshot (134)](https://github.com/user-attachments/assets/eabea5bc-7a16-4e86-bbb6-87cab10e6690)
+
+  ![Screenshot (135)](https://github.com/user-attachments/assets/80dc678b-fc83-4300-90a5-52609ba54f02)
+
+
+#### Pie Chart
+- Purpose: Show proportions of a whole.
+
+- Example: Percentage of patients with and without diabetes.
+
+- Formatting: Add percentage labels, colors, and legends.
+
+
+   ![Screenshot (136)](https://github.com/user-attachments/assets/0586944c-51f2-49a9-8b45-f2fcd465c642)
+   ![Screenshot (137)](https://github.com/user-attachments/assets/43f572e2-850f-4d77-a0e1-14c924dc7f12)
+
+
+
+
+
+
+
+
 
 
