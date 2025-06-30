@@ -1021,6 +1021,268 @@ Data:
 - https://exceljet.net/form-controls
 - https://support.microsoft.com/en-us/excel
 
+-------------------------------------------------
+
+
+### Python
+#### Introduction to Python and Data Analysis Basics:
+
+#### 1. Introduction to Python
+
+Python is a high-level, interpreted programming language that is widely used in data science due to its simplicity, readability, and vast ecosystem of libraries like NumPy, Pandas, Matplotlib, and Scikit-learn.
+
+### 🔍 Applications in Data Analysis
+- Data cleaning and preprocessing
+- Exploratory Data Analysis (EDA)
+- Statistical analysis and modeling
+- Machine learning and predictive analytics
+- Data visualization
+
+
+
+####  2. Setting up the Python Environment
+
+####  Recommended Tools
+- **Anaconda**: A distribution of Python tailored for data science.
+- **Jupyter Notebook**: An open-source web-based interface to write and run Python code interactively.
+
+####  Installation Steps
+1. Download Anaconda from: [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution)
+2. Install and launch Jupyter Notebook via:
+   ```bash
+   conda install jupyter
+   jupyter notebook
+
+
+
+
+#### Python Data Type:
+
+#### Integer (`int`)
+
+#### What is it?
+
+An **integer** in Python is a whole number — it can be **positive**, **negative**, or **zero**, but it does **not contain a decimal point**.
+
+Integers are one of the most commonly used data types in programming for counting, indexing, and performing arithmetic operations.
+
+---
+
+####  Example
+
+```python
+a = 10
+
+print(a)           # Output: 10
+print(type(a))     # Output: <class 'int'>
+
+```
+
+#### Python Data Type:
+
+#### Float (`float`)
+
+#### What is a Float?
+
+A `float` in Python represents a **floating-point number**, which is a number that has a **decimal point**.
+
+It is used when precision with fractions or real numbers is needed — for example, to represent prices, percentages, or scientific measurements.
+
+---
+
+#### Key Characteristics:
+- Stores numbers with decimal points.
+- Can represent very large or very small numbers (scientific notation supported).
+- Supports mathematical operations like addition, subtraction, multiplication, division, etc.
+
+---
+
+#### Example Code
+
+```python
+# Float example
+b = 3.14
+
+print(b)           # Output: 3.14
+print(type(b))     # Output: <class 'float'>
+
+```
+
+#### Python Data Type: 
+
+#### String (`str`)
+
+#### What is a String?
+
+A **string** in Python is a sequence of **characters** enclosed in either **single (`'`)** or **double (`"`)** quotes.
+
+Strings are used to store text-based data such as names, messages, or any textual content.
+
+---
+
+#### Key Characteristics:
+- Immutable (cannot be changed after creation).
+- Supports indexing and slicing.
+- Provides built-in string methods like `.upper()`, `.lower()`, `.replace()`, etc.
+
+---
+
+#### Example
+
+```python
+name = "Python"
+
+print(name)          # Output: Python
+print(type(name))    # Output: <class 'str'>
+
+```
+
+#### Python Data Type:
+
+#### List (`list`)
+
+#### What is a List?
+
+A **list** is a collection of **ordered and changeable** (mutable) items in Python. Lists can hold multiple elements of the **same or different data types**, and they are defined using **square brackets `[]`**.
+
+---
+
+#### Key Characteristics:
+- Lists are **ordered** (elements have a defined position).
+- Lists are **mutable** (you can change, add, or remove items).
+- Can contain **mixed data types** (e.g., strings, numbers, etc.).
+- Supports indexing and slicing.
+
+---
+
+#### Example
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+print(fruits[1])         # Output: banana
+fruits.append("orange")  # Add an item to the end
+print(fruits)            # Output: ['apple', 'banana', 'cherry', 'orange']
+
+```
+
+#### Python Data Type: 
+
+#### Tuple (`tuple`)
+
+#### What is it?
+
+A **tuple** in Python is a collection of **ordered elements**, **similar to a list**, but **immutable** — meaning its elements **cannot be changed** after creation.
+
+Tuples are defined using **parentheses `()`** and are often used to store data that should not be modified.
+
+---
+
+#### Key Characteristics:
+- Ordered (index-based access like lists)
+- Immutable (elements cannot be changed)
+- Can contain elements of different data types
+- Often used for fixed collections like coordinates, RGB values, etc.
+
+---
+
+#### Example
+
+```python
+colors = ("red", "green", "blue")
+
+print(colors[0])         # Output: red
+print(type(colors))      # Output: <class 'tuple'>
+
+```
+
+#### Python Control Structures and Functions
+
+This document covers essential Python programming constructs that control the flow of execution and organize code into reusable blocks using **functions**.
+
+---
+
+#### Conditional Statements (`if`, `elif`, `else`)
+
+#### What is it?
+Conditional statements allow you to execute different blocks of code based on conditions.
+
+```python
+if condition:
+    # code to execute if condition is True
+elif another_condition:
+    # code if this second condition is True
+else:
+    # code if none of the above conditions are True
+
+
+#### Example:
+ ``` python
+x = 15
+
+if x < 10:
+    print("Less than 10")
+elif x == 15:
+    print("Equal to 15")
+else:
+    print("Greater than 10 and not 15")
+
+```
+#### Python Loops: `for` and `while`
+
+#### What are Loops?
+
+Loops are control structures in Python that allow code to be **repeated** as long as a certain condition is met.
+
+Python provides two main types of loops:
+- `for` loop — used for iterating over sequences.
+- `while` loop — runs until a condition becomes False.
+
+---
+
+#### For Loop
+
+#### What is it?
+
+A `for` loop is used to **iterate** over a sequence such as a list, tuple, dictionary, set, or string.
+
+#### Syntax:
+```python
+for variable in sequence:
+    # block of code
+```
+
+#### Python `while` Loop
+
+#### What is a `while` Loop?
+
+A `while` loop in Python is used to **repeat a block of code** **as long as a specified condition is True**. It is typically used when the number of iterations is **not known in advance**.
+
+---
+
+#### Syntax
+
+```python
+while condition:
+    # code block to repeat
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
