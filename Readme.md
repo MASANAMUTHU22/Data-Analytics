@@ -291,8 +291,19 @@ Excel is one of the most widely used spreadsheet tools for data analysis, offeri
 
 ### Basic Operations
 - Opening a Workbook: Use File > Open or Ctrl + O to open an existing workbook.
+  
+  ![e1](https://github.com/user-attachments/assets/02798801-f6ed-4e6a-af42-4a419d150dc6)
+
 
 - Saving a Workbook: Use Ctrl + S to save. Excel files are saved with .xlsx extension.
+  
+
+  ![e2](https://github.com/user-attachments/assets/3a884ca9-a9f1-4416-80dd-565158440b07)
+
+
+  ![e3](https://github.com/user-attachments/assets/897b10f0-acf1-440c-a87c-de1438adcbfa)
+
+
 
 - Organizing Workbooks:
 
@@ -346,6 +357,85 @@ Data Cleaning and Preparation is a crucial step in the data analysis and machine
 
 - Outliers or invalid data entries
 
+
+#### Introduction to Pandas
+
+**Pandas** is a powerful and widely-used **Python library** for data manipulation and analysis. It provides **high-level data structures** and functions that make it easy to work with structured data, such as tables (like those in Excel or CSV files).
+
+---
+
+#### Key Features of Pandas
+
+#### Data Structures:
+
+- **Series**: One-dimensional labeled array.
+- **DataFrame**: Two-dimensional labeled table (like an Excel spreadsheet or SQL table).
+
+#### Data Handling Capabilities:
+
+- Load data from different file formats (CSV, Excel, SQL, JSON, etc.).
+- Handle missing data.
+- Filter, sort, group, and aggregate data.
+- Merge and join datasets.
+- Perform statistical analysis.
+
+---
+
+#### Example Code
+
+```python
+import pandas as pd
+
+# Create a DataFrame
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35]
+}
+df = pd.DataFrame(data)
+
+print(df)
+```
+
+#### Introduction to NumPy
+
+**NumPy** (Numerical Python) is a powerful Python library used for **scientific computing**. It provides support for **multi-dimensional arrays** (called `ndarray`) and a large collection of **mathematical functions** to operate on these arrays efficiently.
+
+---
+
+#### Key Features of NumPy
+
+#### N-Dimensional Arrays
+- Supports fast and efficient operations on arrays of any dimension.
+
+#### Mathematical Operations
+- Built-in support for linear algebra, statistics, trigonometry, and more.
+
+#### Broadcasting
+- Perform operations between arrays of different shapes without explicit loops.
+
+#### Integration
+- Works seamlessly with libraries like Pandas, Matplotlib, Scikit-learn, and others.
+
+---
+
+#### Example Code
+
+```python
+import numpy as np
+
+# Create a 1D array
+arr1 = np.array([1, 2, 3, 4, 5])
+print("1D Array:", arr1)
+
+# Create a 2D array
+arr2 = np.array([[1, 2], [3, 4]])
+print("2D Array:\n", arr2)
+
+# Perform operations
+print("Array Sum:", np.sum(arr1))
+print("Mean of Array:", np.mean(arr1))
+print("Element-wise Addition:\n", arr2 + 2)
+```
 
 ###  Importing Data from Various Sources
 In real-world scenarios, data comes in different formats and from various sources like CSV files, Excel sheets, plain text files, or databases. The first step in data analysis is to import this raw data into a tool like Python using libraries such as pandas.
