@@ -661,7 +661,7 @@ Slicers are visual filtering tools that allow users to interactively filter repo
    ![Screenshot (136)](https://github.com/user-attachments/assets/0586944c-51f2-49a9-8b45-f2fcd465c642)
    ![Screenshot (137)](https://github.com/user-attachments/assets/43f572e2-850f-4d77-a0e1-14c924dc7f12)
 
- ## Advanced Data Analysis Techniques
+### Advanced Data Analysis Techniques
 
 ### PivotTables and PivotCharts
 
