@@ -6,6 +6,7 @@
 
 ### Foundations and Basic Data Analysis
 ### Introduction to Excel
+
   - Overview of the Excel interface
   - Basic operations (opening, saving, and organizing workbooks)
   - Basic cell operations (data entry, formatting, and basic formulas)
