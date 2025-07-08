@@ -1122,7 +1122,7 @@ Data:
 
 Python is a high-level, interpreted programming language that is widely used in data science due to its simplicity, readability, and vast ecosystem of libraries like NumPy, Pandas, Matplotlib, and Scikit-learn.
 
-### 🔍 Applications in Data Analysis
+### Overview of Python and its Applications in Data Analysis
 - Data cleaning and preprocessing
 - Exploratory Data Analysis (EDA)
 - Statistical analysis and modeling
@@ -1358,7 +1358,52 @@ while condition:
     # code block to repeat
 ```
 
+#### Hands-on Practice with Basic Python Exercises:
 
+  This repository contains beginner-level Python exercises to strengthen your programming fundamentals. It covers core topics such as variables, loops, conditionals, functions, and basic data structures like lists and dictionaries.
+
+### 1. Variables and Operators
+📄 File: `01_variables_operators.py`
+Learn about declaring different types of variables and using arithmetic, assignment, comparison, and logical operators.
+
+
+
+
+### 2. Conditional Statements
+📄 File: `02_conditionals.py`
+Explore `if`, `if-else`, and `if-elif-else` structures. Practice nesting conditions.
+
+### 3. Loops
+📄 File: `03_loops.py`
+Understand `for` and `while` loops, and loop control statements like `break`, `continue`, and `pass`.
+
+### 4. Functions
+📄 File: `04_functions.py`
+Learn to define and call functions, use parameters, return values, and understand default/keyword arguments and basic recursion.
+
+### 5. Lists
+📄 File: `05_lists.py`
+Discover how to create, access, and manipulate list items using various methods, slicing, and list comprehensions.
+
+### 6. Tuples and Sets
+📄 File: `06_tuples_sets.py`
+Understand tuple basics (immutability) and common set operations (union, intersection, difference).
+
+### 7. Dictionaries
+📄 File: `07_dictionaries.py`
+Work with key-value pairs, access, update, delete, and loop through dictionary items.
+
+### 8. String Manipulation
+📄 File: `08_strings.py`
+Practice string slicing, formatting, and useful string methods.
+
+### 9. Input and Output
+📄 File: `09_input_output.py`
+Learn to use `input()` and `print()`, perform typecasting, and basic file I/O.
+
+### 10. Basic Python Programs (Mini Projects)
+📄 File: `10_basic_programs.py`
+Apply your knowledge to build simple programs like a number guessing game, a calcul
 
 
 
