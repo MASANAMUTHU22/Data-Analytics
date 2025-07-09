@@ -1358,52 +1358,201 @@ while condition:
     # code block to repeat
 ```
 
-#### Hands-on Practice with Basic Python Exercises:
+#### Basic Python Exercises
 
-  This repository contains beginner-level Python exercises to strengthen your programming fundamentals. It covers core topics such as variables, loops, conditionals, functions, and basic data structures like lists and dictionaries.
+This repository provides hands-on practice with essential Python concepts:
 
-### 1. Variables and Operators
-📄 File: `01_variables_operators.py`
-Learn about declaring different types of variables and using arithmetic, assignment, comparison, and logical operators.
+#### Covered Topics:
+- Printing
+- Variables and data types
+- Arithmetic operations
+- If-else conditions
+- Loops (for, while)
+- Functions
+- Lambda expressions
+
+#### Running the Practice File
+
+```bash
+python 00_basic_python_practice.py
+```
+
+#### Python Control Structures and Functions
+
+#### Conditional statements (if, elif, else) :
+ A conditional statement is used to make decisions in your program by executing different blocks of code depending on whether a condition is True or False.
+
+ #### Example :
+ 
+ #### Python Control Structures
+
+#### Simple if Statement
+
+This example demonstrates a basic `if` statement in Python, where we check whether the temperature is above a certain threshold.
+
+#### Code Highlights
+
+```python
+temperature = 30
+if temperature > 25:
+    print("It's hot outside!")
+````
+
+#### if-else Statement
+
+This script demonstrates how to use an `if-else` statement to determine voting eligibility based on age.
+
+#### Code:
+```python
+age = 17
+if age >= 18:
+    print("You are eligible to vote.")
+else:
+    print("You are not eligible to vote.")
+
+````
+
+#### if-elif-else Ladder
+
+This script demonstrates how to use multiple conditions to determine a student's grade.
+
+#### Code Example:
+```python
+score = 82
+if score >= 90:
+    print("Grade: A")
+elif score >= 75:
+    print("Grade: B")
+elif score >= 60:
+    print("Grade: C")
+else:
+    print("Grade: F")
+````
+
+#### Nested if Statement
+
+This script demonstrates a nested `if` structure to check:
+- If a number is positive
+- If it is even or odd
+
+#### Code Example:
+```python
+num = 10
+if num > 0:
+    if num % 2 == 0:
+        print("Positive even number")
+    else:
+        print("Positive odd number")
+else:
+    print("Not a positive number")
+
+````
+#### Loops (for, while) :
+
+#### For loop :
+The for loop is used when you know how many times you want to repeat something.
+It iterates over a sequence like a list, range, string, etc.
+
+#### for Loop - Print 1 to 5
+
+This script uses a `for` loop to print numbers from 1 to 5.
+
+#### Code:
+```python
+for i in range(1, 6):
+    print(i)
+```
+
+#### While loop :
+The while loop is used when you don't know in advance how many times to repeat.
+It runs as long as the condition is True.
+
+#### while Loop - Countdown
+
+This script uses a `while` loop to print a countdown from 5 to 1.
+
+#### Code:
+```python
+count = 5
+while count > 0:
+    print(count)
+    count -= 1
+```
+#### Functions and lambda expressions  :
+
+#### What is a Function ?
+
+A function is a block of reusable code that performs a specific task.
+
+#### Why use functions ?
+
+- To avoid code repetition
+
+- To make your program modular and organized
+
+- To improve readability and debugging
+
+#### Function Definition using def
+
+This script demonstrates how to define a function and return a greeting using Python's `def` keyword.
+
+#### Code:
+```python
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))
+```
+#### What is a Lambda Expression ?
+A lambda expression is a small anonymous function defined using the lambda keyword. It is used for short, one-line functions — especially when you don’t want to define a full def block.
+
+#### Lambda Expression
+
+This script shows how to define a lambda (anonymous) function to compute the square of a number.
+
+#### Code:
+```python
+square = lambda x: x ** 2
+print(square(5))
+```
+
+#### Lambda with filter() - Even Numbers
+
+This script demonstrates how to use a `lambda` function with `filter()` to find even numbers in a list.
+
+#### Code:
+```python
+numbers = [1, 2, 3, 4, 5, 6]
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+print("Even numbers:", evens)
+```
+
+#### Practical Exercises on Control Structures and Functions
+
+This script includes mini-projects and logic-building practice using:
+
+- if-elif-else conditions
+- for and while loops
+- user-defined functions
+- lambda with map()
+
+#### Exercises:
+1. Check if number is positive, negative, or zero
+2. Print even numbers from 1 to 10
+3. Calculate factorial using a `while` loop
+4. Square list items using `lambda` and `map()`
+5. Prime number checker function
+
+```
+#### Introduction to NumPy
 
 
 
 
-### 2. Conditional Statements
-📄 File: `02_conditionals.py`
-Explore `if`, `if-else`, and `if-elif-else` structures. Practice nesting conditions.
 
-### 3. Loops
-📄 File: `03_loops.py`
-Understand `for` and `while` loops, and loop control statements like `break`, `continue`, and `pass`.
 
-### 4. Functions
-📄 File: `04_functions.py`
-Learn to define and call functions, use parameters, return values, and understand default/keyword arguments and basic recursion.
 
-### 5. Lists
-📄 File: `05_lists.py`
-Discover how to create, access, and manipulate list items using various methods, slicing, and list comprehensions.
 
-### 6. Tuples and Sets
-📄 File: `06_tuples_sets.py`
-Understand tuple basics (immutability) and common set operations (union, intersection, difference).
-
-### 7. Dictionaries
-📄 File: `07_dictionaries.py`
-Work with key-value pairs, access, update, delete, and loop through dictionary items.
-
-### 8. String Manipulation
-📄 File: `08_strings.py`
-Practice string slicing, formatting, and useful string methods.
-
-### 9. Input and Output
-📄 File: `09_input_output.py`
-Learn to use `input()` and `print()`, perform typecasting, and basic file I/O.
-
-### 10. Basic Python Programs (Mini Projects)
-📄 File: `10_basic_programs.py`
-Apply your knowledge to build simple programs like a number guessing game, a calcul
 
 
 
