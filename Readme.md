@@ -1543,8 +1543,22 @@ This script includes mini-projects and logic-building practice using:
 4. Square list items using `lambda` and `map()`
 5. Prime number checker function
 
-```
 #### Introduction to NumPy
+NumPy (Numerical Python) is a popular open-source library in Python used for:
+
+- Fast numerical computations
+- Handling large, multi-dimensional arrays and matrices
+- Performing mathematical and statistical operations efficiently
+- Supporting linear algebra, Fourier transforms, and more
+
+  It is foundational for data science and machine learning.
+
+#### Why Use NumPy?
+- Replaces slow Python loops with fast, vectorized operations
+
+- Basis for libraries like Pandas, Scikit-learn, TensorFlow
+
+- Efficient memory usage and performance
 
 
 
