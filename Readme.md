@@ -1560,6 +1560,208 @@ NumPy (Numerical Python) is a popular open-source library in Python used for:
 
 - Efficient memory usage and performance
 
+#### What is a NumPy Array?
+A NumPy array is a grid of values (all of the same type) indexed by a tuple of non-negative integers. It is similar to Python lists but much faster and more efficient, especially for large-scale numerical data.
+
+#### Advantages :
+
+| Feature                     | Description                                                               |
+| --------------------------- | ------------------------------------------------------------------------- |
+| 🔸 Performance              | Much faster than Python lists thanks to C-based backend and vectorization |
+| 🔸 Memory Efficiency        | Uses significantly less memory than native Python lists                   |
+| 🔸 Broadcasting             | Automatically applies operations across arrays of different shapes        |
+| 🔸 Built-in Functions       | Provides high-performance statistical and mathematical operations         |
+| 🔸 Multidimensional Support | Supports 1D, 2D, 3D, and higher-dimensional arrays                        |
+| 🔸 Vectorization            | Perform operations on entire arrays without writing explicit loops        |
+
+
+#### Example:
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)
+```
+
+####  Main Types of NumPy Arrays
+
+
+| Array Type           | Description                             | Shape Example                                  |
+| -------------------- | --------------------------------------- | ---------------------------------------------- |
+| **1D Array**         | Single-dimensional array (like a list)  | `[1, 2, 3]` → shape `(3,)`                     |
+| **2D Array**         | Matrix (rows and columns)               | `[[1, 2], [3, 4]]` → shape `(2, 2)`            |
+| **3D Array**         | Array of matrices / tensors             | `[[[1], [2]], [[3], [4]]]` → shape `(2, 2, 1)` |
+| **nD Array**         | Arrays of higher dimensions             | shape `(d1, d2, ..., dn)`                      |
+| **Empty Array**      | No elements                             | `np.array([])`                                 |
+| **Array with dtype** | Array with explicitly defined data type | `np.array([1, 2], dtype=float)`                |
+
+#### Example :
+
+```python
+import numpy as np
+
+#1D Array
+array_1d = np.array([10, 20, 30])
+print("1D Array:", array_1d)
+print("Shape:", array_1d.shape)
+
+#2D Array (Matrix)
+array_2d = np.array([[1, 2, 3], [4, 5, 6]])
+print("\n2D Array:\n", array_2d)
+print("Shape:", array_2d.shape)
+
+#3D Array (Tensor)
+array_3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+print("\n3D Array:\n", array_3d)
+print("Shape:", array_3d.shape)
+
+#nD Array (higher dimensions)
+array_4d = np.random.rand(2, 2, 2, 2)
+print("\n4D Array shape:", array_4d.shape)
+
+#Empty Array
+empty_array = np.array([])
+print("\nEmpty Array:", empty_array)
+print("Shape:", empty_array.shape)
+
+#Array with Specific Data Type
+float_array = np.array([1, 2, 3], dtype=float)
+string_array = np.array([1, 2, 3], dtype=str)
+print("\nArray with float dtype:", float_array)
+print("Array with string dtype:", string_array)
+
+#Using np.zeros, np.ones, np.full, np.arange, np.linspace
+zeros_array = np.zeros((2, 3))
+ones_array = np.ones((2, 3))
+full_array = np.full((2, 3), fill_value=9)
+range_array = np.arange(0, 10, 2)
+linspace_array = np.linspace(0, 1, 5)
+
+print("\nZeros Array:\n", zeros_array)
+print("Ones Array:\n", ones_array)
+print("Full Array (filled with 9):\n", full_array)
+print("Arange Array:", range_array)
+print("Linspace Array:", linspace_array)
+
+```
+
+#### Basic operations with NumPy arrays :
+-  Element-wise Arithmetic Operations
+-  Scalar Operations
+-  Aggregation Functions
+-  Reshaping Arrays
+-  Slicing and Indexing
+-   Broadcasting
+
+#### Element-wise Arithmetic Operations
+
+You can perform operations like addition, subtraction, multiplication, and division between two arrays of the same shape.
+
+#### Example :
+
+```python
+import numpy as np
+
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+print("Addition:", arr1 + arr2)         
+print("Multiplication:", arr1 * arr2)
+
+```
+
+#### Scalar Operations
+
+You can also apply operations between a scalar (single value) and an array. The operation is applied to every element.
+
+#### Example :
+```python
+arr = np.array([1, 2, 3])
+print("Add 10:", arr + 10)     
+print("Multiply by 2:", arr * 2)  
+
+```
+#### Aggregation Functions
+These functions operate on entire arrays to return a single value, or apply across specific axes (rows or columns):
+
+  sum(), mean(), min(), max(), std(), etc.
+
+#### Example :
+```python
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print("Sum of all:", np.sum(arr))            
+print("Sum along rows (axis=1):", np.sum(arr, axis=1))
+
+```
+
+#### Indexing, slicing, and reshaping arrays :
+
+#### Indexing :
+#### Basic Indexing
+ Indexing means accessing a specific element using its position.
+
+####  Example (1D array):
+```python
+import numpy as np
+
+arr = np.array([5, 10, 15, 20])
+print(arr[0])   # Output: 5
+print(arr[-1])  # Output: 20 (last element)
+
+````
+
+####  Indexing in 2D Arrays
+Use [row, column] to access elements in 2D arrays.
+
+#### Example :
+```python
+arr = np.array([[10, 20, 30], [40, 50, 60]])
+print("Element at row 1, col 1:", arr[1, 1])  # Output: 50
+
+```
+
+####  Slicing :
+Slicing means selecting a subset of elements from a NumPy array using a specific range of indices
+
+- start: where to begin (inclusive)
+
+- stop: where to end (exclusive)
+
+- step: spacing between indices
+
+#### Example
+
+#### Slicing in 1D Arrays:
+```python
+arr = np.array([0, 10, 20, 30, 40, 50])
+print(arr[1:5])    # [10 20 30 40]
+print(arr[:3])     # [0 10 20]
+print(arr[::2])    # [0 20 40]
+```
+
+#### Slicing in 2D Arrays :
+
+```python
+arr2d = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+# Extract 2x2 sub-array from top-left
+print(arr2d[0:2, 0:2])
+```
+#### Summary Table :
+
+| Technique         | Description                        | Example                   |
+| ----------------- | ---------------------------------- | ------------------------- |
+| `arr[i]`          | Access element at index `i`        | `arr[2] → 15`             |
+| `arr[i, j]`       | Access element at row `i`, col `j` | `arr[1, 2] → 60`          |
+| `arr[start:stop]` | Slice range in 1D array            | `arr[1:4] → [10, 15, 20]` |
+| `arr[:, j]`       | All rows, column `j`               | `arr[:, 1]`               |
+| `arr[i, :]`       | Row `i`, all columns               | `arr[0, :]`               |
+| `arr[arr > 10]`   | Filter using a condition           | `→ [15, 20, 25]`          |
+
+
+
 
 
 
