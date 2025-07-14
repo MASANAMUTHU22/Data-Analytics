@@ -1761,6 +1761,174 @@ print(arr2d[0:2, 0:2])
 | `arr[arr > 10]`   | Filter using a condition           | `→ [15, 20, 25]`          |
 
 
+#### Introduction to Pandas 
+ Pandas is an open-source Python library used for data analysis, data manipulation, and data cleaning. It provides powerful, flexible, and easy-to-use data structures like Series (1D) and DataFrames (2D), making it a go-to tool for anyone working with structured data.
+
+####  Understanding Pandas DataFrames and Series :
+####  Pandas Series :
+
+A Series is a one-dimensional labeled array capable of holding any data type — integers, strings, floats, Python objects, etc.
+
+#### Key Features:
+- Similar to a NumPy array, but with labels (indexes).
+
+- Can be thought of as a single column of a DataFrame.
+
+#### Example :
+```python
+import pandas as pd
+
+# Create a Series
+s = pd.Series([10, 20, 30], index=['a', 'b', 'c'])
+
+print(s)
+```
+
+####  Pandas DataFrame :
+A DataFrame is a two-dimensional, tabular data structure with labeled axes (rows and columns). Think of it like an Excel spreadsheet or SQL table.
+
+#### Key Features:
+- Each column is a Series.
+
+- Can hold different data types in each column (int, float, str, etc.).
+
+- Indexing by rows and columns.
+
+#### Example :
+```python
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'Score': [85.5, 90.0, 95.5]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+```
+#### Reading and writing data (CSV, Excel, etc.) :
+Pandas makes it very easy to read data from files and write data back after analysis or manipulation.
+
+#### Reading Data :
+
+#### Read CSV File
+```python
+import pandas as pd
+
+# Read CSV
+df = pd.read_csv('data.csv')
+```
+
+#### Read Excel File :
+```python
+# Read Excel (first sheet by default)
+df = pd.read_excel('data.xlsx')
+```
+
+####  Read JSON File :
+```python
+df = pd.read_json('data.json')
+```
+#### Read from SQL Table :
+```python
+import sqlite3
+
+conn = sqlite3.connect('database.db')
+df = pd.read_sql('SELECT * FROM table_name', conn)
+```
+
+#### Writing Data :
+
+#### Write to CSV File :
+```python
+df.to_csv('output.csv', index=False)
+```
+
+#### Write to Excel File :
+```python
+df.to_excel('output.xlsx', index=False)
+```
+
+####  Write to JSON File :
+```python
+df.to_json('output.json')
+```
+
+####  Write to SQL Table :
+```python
+df.to_sql('table_name', conn, if_exists='replace', index=False)
+```
+
+#### Basic data manipulation (selection, filtering, sorting) :
+ These are basic data manipulation techniques used to view or organize specific   parts of a dataset.
+
+####  Selection :
+#### Definition:
+
+Selection means choosing specific columns or rows from a DataFrame.
+
+#### Use case:
+
+- View only the "Name" column
+
+- Select the first 5 rows
+
+#### Select a Column :
+```python
+
+df['column_name']
+# or
+df.column_name
+```
+#### Select Multiple Columns :
+```python
+#Copy code
+df[['column1', 'column2']]
+```
+#### Select Rows by Index :
+```python
+#Copy code
+df.iloc[0]     
+df.loc[0]
+```
+#### Slice Rows :
+```python
+#Copy code
+df[0:5]  
+````
+
+#### Filtering
+
+#### Definition:
+Filtering means showing only the rows that meet a condition.
+
+#### Use case:
+
+- Show all people with Age > 25
+
+- Show students who scored more than 90
+
+
+#### Filter Rows with Condition
+```python
+#Copy code
+df[df['Age'] > 25]
+```
+
+#### Combine Conditions
+```python
+#Copy code
+df[(df['Age'] > 25) & (df['Score'] >= 90)]
+```
+
+#### Check for Specific Values
+```python
+#Copy code
+df[df['Name'].isin(['Alice', 'Bob'])]
+```
+
+
+
 
 
 
