@@ -2297,6 +2297,24 @@ agg = df.groupby('Department')['Salary'].agg(['sum', 'mean', 'count', 'max'])
 print("\nGroupBy Aggregation:\n", agg)
 ```
 
+#### Applying custom functions with apply() :
+The apply() function in Pandas lets you apply custom functions to rows or columns of a DataFrame or to elements of a Series.
+
+#### Why use apply()?
+- To apply your own logic (beyond built-in functions).
+
+- Works with both Series and DataFrames.
+
+- Cleaner than loops for row/column operations.
+
+####  Basic Syntax:
+```
+df['column'].apply(function)
+df.apply(function, axis=0)   # column-wise
+df.apply(function, axis=1)   # row-wise
+```
+
+
 
 
 
