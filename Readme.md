@@ -1927,7 +1927,331 @@ df[(df['Age'] > 25) & (df['Score'] >= 90)]
 df[df['Name'].isin(['Alice', 'Bob'])]
 ```
 
+#### Sorting :
+Sorting is the process of arranging data in a specific order — either ascending (smallest to largest) or descending (largest to smallest) — based on one or more columns (fields)
 
+#### Why Sorting is Important:
+- Makes data easier to analyze or visualize
+
+- Helps in quickly finding patterns or outliers
+
+- Useful for ranking, like top scores or lowest prices
+
+#### Example :
+```python
+
+import pandas as pd
+
+# Sample dataset
+data = {
+    'Student': ['Raj', 'Anu', 'Kiran', 'Divya', 'Manoj'],
+    'Marks': [78, 92, 85, 88, 70]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# -------------------------------
+# Sort by Marks in ascending order
+# -------------------------------
+sorted_df_asc = df.sort_values(by='Marks', ascending=True)
+print("Ascending Order (Lowest to Highest):")
+print(sorted_df_asc)
+
+# -------------------------------
+# Sort by Marks in descending order
+# -------------------------------
+sorted_df_desc = df.sort_values(by='Marks', ascending=False)
+print("\nDescending Order (Highest to Lowest):")
+print(sorted_df_desc)
+```
+
+#### Practical exercises with Pandas :
+#### Data Loading & Inspection
+1 . Load CSV, Excel, or JSON files
+
+2 . View basic info (.head(), .info(), .describe())
+
+3 . Check for missing values
+
+#### Data Cleaning
+1 . Handle missing data (fillna, dropna)
+
+2 . Replace values (replace)
+
+3 . Rename columns
+
+4 . Change data types (astype)
+
+
+#### Selection & Filtering
+1 . Select rows/columns by label or index (loc, iloc)
+
+2 . Filter rows using conditions (df[df['col'] > 10])
+
+3 . Apply multiple conditions with & / |
+
+#### Sorting
+1 . Sort by one column
+
+2 . Sort by multiple columns
+
+3 . Sort by index
+
+#### Data Manipulation
+1 . Add or delete columns
+
+2 . Apply functions to columns (apply, map)
+
+3 . Create new columns using logic
+
+4 . Replace values conditionally
+
+
+#### Data Cleaning and Preprocessing :
+Data Cleaning and Preprocessing are essential steps in data analysis and machine learning. These steps ensure that your data is accurate, consistent, and ready for analysis or modeling.
+
+
+#### Handling missing data :
+Missing data (also called NaN, null, or None) is common in real-world datasets. Handling it properly is essential before performing analysis or building models.
+
+#### Common Techniques to Handle Missing Data :
+####  Detect Missing Data :
+Detecting missing values is the first step in data cleaning. In Pandas, missing data is usually represented as NaN (Not a Number).
+
+#### Example :
+```python
+df.isnull()         # Returns True for missing values
+df.isnull().sum()   # Count missing values per column
+```
+
+#### Remove Missing Data :
+
+#### Remove rows with missing values :
+If your dataset contains rows with missing values (NaN), and those rows are not useful for analysis, you can remove them using:
+
+#### Example  :
+``` python
+df.dropna()
+```
+
+#### Remove columns with missing values:
+Sometimes entire columns in a dataset may have too many missing values, making them unreliable. In such cases, you can remove (drop) columns with missing values using:
+
+#### Example  :
+```python
+df.dropna(axis=1)
+```
+
+#### Fill Missing Values :
+When you don’t want to drop rows or columns with missing values (NaN), you can fill them with appropriate values using.
+
+#### Fill with a fixed value :
+You can replace all missing values in a column with a specific value like 0, 'Unknown', or any default
+
+```python
+import pandas as pd
+import numpy as np
+
+# Sample DataFrame
+data = {
+    'Name': ['Alice', 'Bob', np.nan, 'David'],
+    'Age': [25, np.nan, 35, 22],
+    'Score': [85, 90, np.nan, 88]
+}
+
+df = pd.DataFrame(data)
+
+# 🔸 Fill missing 'Name' with 'Unknown'
+df['Name'].fillna('Unknown', inplace=True)
+
+# 🔸 Fill missing 'Score' with fixed value 0
+df['Score'].fillna(0, inplace=True)
+
+print("✅ After filling with fixed values:")
+print(df)
+```
+
+####  Fill with Mean, Median, or Mode :
+This is useful for numerical columns like Age, Salary, etc.
+
+#### Example :
+```python
+# Fill missing 'Age' with the mean
+df['Age'].fillna(df['Age'].mean(), inplace=True)
+
+# Fill missing 'Age' with the median
+# df['Age'].fillna(df['Age'].median(), inplace=True)
+
+# Fill missing 'Age' with the mode
+# df['Age'].fillna(df['Age'].mode()[0], inplace=True)
+
+```
+
+#### Data transformation (normalization, standardization) :
+#### Normalization
+- Definition: Rescaling data to a fixed range, usually [0, 1]
+
+- When to use: When features have different scales, and you want to bring them to the same scale
+
+<img width="392" height="196" alt="Screenshot (149)" src="https://github.com/user-attachments/assets/e6ff05b4-3d4e-4659-b923-ae569c00b4b8" />
+
+#### Standardization
+- Definition: Transforming data to have a mean of 0 and standard deviation of 1
+
+- When to use: When data follows a normal distribution, or for algorithms like SVM, Logistic Regression
+
+<img width="150" height="150" alt="Screenshot (150)" src="https://github.com/user-attachments/assets/f746fa0a-900f-4e75-9551-510eec3d5c53" />
+
+#### Example :
+```python
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
+
+# Sample DataFrame
+data = {
+    'Height': [150, 160, 170, 180, 190],
+    'Weight': [55, 65, 75, 85, 95]
+}
+df = pd.DataFrame(data)
+
+print("🔹 Original Data:")
+print(df)
+
+# --- Normalization [0, 1] ---
+scaler_norm = MinMaxScaler()
+df_norm = pd.DataFrame(scaler_norm.fit_transform(df), columns=df.columns)
+
+print("\n✅ Normalized Data (MinMaxScaler):")
+print(df_norm)
+
+# --- Standardization (mean = 0, std = 1) ---
+scaler_std = StandardScaler()
+df_std = pd.DataFrame(scaler_std.fit_transform(df), columns=df.columns)
+
+print("\n✅ Standardized Data (StandardScaler):")
+print(df_std)
+```
+
+#### Handling categorical data :
+In real-world datasets, some columns contain categorical values like gender ("Male", "Female"), department names ("HR", "IT"), or product categories. These need to be converted into numerical values before feeding them into a machine learning model.
+
+####  Common Techniques to Handle Categorical Data :
+
+- Label Encoding
+-  One-Hot Encoding (Dummy Variables)
+-  Using astype('category')
+
+#### Label Encoding
+- Converts categories into numeric labels (e.g., "Male" → 0, "Female" → 1)
+
+#### Example :
+```python
+import pandas as pd
+
+df = pd.DataFrame({'Gender': ['Male', 'Female', 'Female', 'Male']})
+
+# Convert to numeric
+df['Gender_Encoded'] = df['Gender'].map({'Male': 0, 'Female': 1})
+
+print(df)
+```
+
+#### One-Hot Encoding (Dummy Variables)
+- Creates a new binary column for each category
+
+```python
+df = pd.DataFrame({'Department': ['HR', 'IT', 'Finance', 'HR']})
+
+# One-hot encode
+df_encoded = pd.get_dummies(df, columns=['Department'])
+
+print(df_encoded)
+```
+#### Using astype('category')
+- Changes column type to a Pandas Categorical type (useful for memory efficiency or ordering)
+
+```python
+df['Department'] = df['Department'].astype('category')
+print(df['Department'].cat.codes)  # View encoded categories
+```
+
+
+#### Practical exercises on data cleaning and preprocessing:
+
+1 . Detect and count missing values in a dataset
+
+2 . Drop rows with missing values
+
+3 . Drop columns with missing values
+
+4 . Fill missing values with a fixed value (e.g., 0 or "Unknown")
+
+5 . Fill missing values using mean, median, or mode
+
+6 . Normalize numerical columns using Min-Max Scaling
+
+7 . Standardize numerical columns using Z-score
+
+8 . Convert categorical data using Label Encoding
+
+9 . Convert categorical data using One-Hot Encoding
+
+#### Advanced Data Analysis and Visualization :
+
+#### Data Aggregation and Group Operations :
+
+####  GroupBy operations in Pandas :
+The groupby() function in Pandas is a powerful tool used to split data into groups, apply a function (like sum, mean), and then combine the results.
+
+#### Basic Syntax :
+```python
+df.groupby('column_name')
+```
+#### Group by one column and get the mean:
+You group your data based on one column, and then calculate the average (mean) for each group.
+
+#### Example :
+```python
+import pandas as pd
+
+# Sample data
+data = {
+    'Department': ['HR', 'HR', 'IT', 'IT', 'Finance'],
+    'Salary': [40000, 42000, 60000, 62000, 50000]
+}
+df = pd.DataFrame(data)
+
+# Group by 'Department' and get mean salary
+mean_salary = df.groupby('Department')['Salary'].mean()
+print(mean_salary)
+```
+#### Group by multiple columns:
+Group data based on two or more columns, then perform an operation like sum(), mean(), etc.
+
+#### Example :
+```python
+data = {
+    'Department': ['HR', 'HR', 'IT', 'IT', 'Finance'],
+    'Gender': ['F', 'M', 'F', 'M', 'M'],
+    'Salary': [40000, 42000, 60000, 62000, 50000]
+}
+df = pd.DataFrame(data)
+
+# Group by Department and Gender
+grouped = df.groupby(['Department', 'Gender'])['Salary'].mean()
+print(grouped)
+```
+
+####  Get size/count of each group :
+Count how many entries (rows) are in each group.
+
+#### Example :
+```python
+# Count how many people in each department
+count = df.groupby('Department').size()
+print(count)
+```
 
 
 
