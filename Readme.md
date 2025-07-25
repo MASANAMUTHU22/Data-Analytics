@@ -2467,7 +2467,7 @@ Exploratory Data Analysis (EDA) is the process of examining, understanding, and 
 #### Understanding the EDA process  :
 The EDA process is a structured approach to analyze and understand a dataset before applying machine learning or statistical models.
 
-####bSteps in the EDA Process
+#### Steps in the EDA Process
 1. Understand the Data
 - Load the dataset
 
@@ -2519,6 +2519,7 @@ sns.pairplot(df), sns.heatmap(df.corr())
 
 - Helps shape your modeling strategy    
 
+#### Descriptive statistics and data distribution :
 
   
   
