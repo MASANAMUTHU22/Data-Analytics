@@ -2173,31 +2173,351 @@ df.apply(function, axis=0)   # column-wise
 df.apply(function, axis=1)   # row-wise
 ```
 
+#### Practical exercises on data aggregation :
+
+1 . Loading and previewing data
+
+2 . Grouping data using groupby()
+
+3 . Aggregating with built-in functions (sum(), mean(), count(), min(), max())
+
+4 . Aggregating multiple columns with .agg()
+
+5 . Group by single column
+
+6 . Group by multiple columns
+
+7 . Counting unique values (nunique())
+
+8 . Sorting aggregated results
+
+9 . Filtering groups using filter()
+
+10 . Applying custom aggregation functions
+
+#### Data Visualization with Matplotlib :
+
+#### Introduction to Matplotlib :
+Matplotlib is a powerful Python library used for creating static, animated, and interactive visualizations. It is especially popular for plotting data in 2D graphs like line charts, bar charts, histograms, and scatter plots.
+
+#### Why Use Matplotlib?
+- Visualize data for better understanding
+
+- Identify patterns and trends
+
+- Create publication-quality plots
+
+- Customizable and integrates with NumPy, Pandas, and Jupyter Notebooks
+
+#### Creating basic plots (line, bar, scatter, histogram) :
+#### Line Plot:
+- Plotting x and y data using plt.plot()
+
+- Adding title, labels, and grid
+
+#### Example :
+```python
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [2, 5, 7, 10, 12]
+
+plt.plot(x, y, color='blue', marker='o')
+plt.title("Line Plot Example")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid(True)
+plt.show()
+```
+
+#### Bar Chart
+
+- Creating vertical and horizontal bar charts using plt.bar() and plt.barh()
+
+- Customizing bar width and colors
+
+#### Example :
+```python
+categories = ['Apple', 'Banana', 'Orange', 'Grapes']
+sales = [50, 70, 30, 90]
+
+plt.bar(categories, sales, color='green')
+plt.title("Fruit Sales")
+plt.xlabel("Fruits")
+plt.ylabel("Quantity Sold")
+plt.show()
+```
+
+#### Scatter Plot
+
+- Using plt.scatter() to show relationships between variables
+
+- Adding colors, sizes, and labels to scatter points
+
+#### Example :
+```python
+height = [150, 160, 170, 180, 190]
+weight = [50, 60, 70, 80, 90]
+
+plt.scatter(height, weight, color='red')
+plt.title("Height vs Weight")
+plt.xlabel("Height (cm)")
+plt.ylabel("Weight (kg)")
+plt.show()
+```
+
+#### Histogram
+
+- Visualizing data distribution using plt.hist()
+
+- Setting number of bins and range
+
+#### Example :
+```python
+ages = [18, 22, 21, 19, 25, 30, 22, 35, 40, 28, 32, 25, 22]
+
+plt.hist(ages, bins=5, color='purple', edgecolor='black')
+plt.title("Age Distribution")
+plt.xlabel("Age Groups")
+plt.ylabel("Frequency")
+plt.show()
+```
+
+#### Customizing plots (titles, labels, legends) :
+Here’s an example that shows how to customize plots in Matplotlib by adding titles, axis labels, legends, gridlines, and styles.
+
+#### Example:
+```python
+import matplotlib.pyplot as plt
+
+# Sample data
+days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+sales_a = [100, 120, 140, 130, 150]
+sales_b = [90, 110, 135, 120, 145]
+
+# Plotting two lines
+plt.plot(days, sales_a, label='Product A', color='blue', linestyle='--', marker='o')
+plt.plot(days, sales_b, label='Product B', color='green', linestyle='-', marker='s')
+
+# 🔹 Customizations
+plt.title("Weekly Sales Comparison")       # Title of the plot
+plt.xlabel("Days of the Week")             # X-axis label
+plt.ylabel("Units Sold")                   # Y-axis label
+plt.legend()                               # Show legend
+plt.grid(True, linestyle=':', alpha=0.6)   # Add grid with custom style
+plt.tight_layout()                         # Adjust layout to prevent overlap
+
+# Display the plot
+plt.show()
+```
+#### Custom Elements Used
+- label → Sets the name for the legend
+
+- title() → Adds a title to the chart
+
+- xlabel() and ylabel() → Label axes
+
+- legend() → Displays labels for multiple plots
+
+- grid() → Adds a background grid
+
+- color, linestyle, marker → Style the line
+
+####  Practical exercises with Matplotlib:
+1 . Line plot of temperature over days
+
+2 . Bar chart of monthly sales
+
+3 . Scatter plot of height vs weight
+
+4 . Histogram of exam scores
+
+5 . Custom line plot with multiple data series and legend
+
+6 . Pie chart showing market share
+
+7 . Subplots: displaying multiple plots in one figure
+
+8 . Adding titles, labels, and grid lines to plots
+
+9 . Styling plots with colors, markers, and line styles
+
+10 . Saving plots as image files
+
+#### Advanced Data Visualization with Seaborn :
+#### Introduction to Seaborn 
+Seaborn is a powerful Python data visualization library built on top of Matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics with less code and better default styles.
+
+#### Key Features of Seaborn
+- Beautiful and modern chart styles
+
+- Simplified syntax for complex plots
+
+- Built-in support for Pandas DataFrames
+
+- Automatic statistical aggregation (mean, count, etc.)
+
+- Integration with Matplotlib for further customization
+
+####  Creating advanced visualizations (heatmaps, pair plots, box plots, violin plots):
+
+#### Heatmap
+
+- Visualize correlation matrices or tabular data using sns.heatmap()
+
+#### Example :
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load sample dataset
+df = sns.load_dataset("iris")
+
+# Compute correlation
+corr = df.corr(numeric_only=True)
+
+# Plot heatmap
+sns.heatmap(corr, annot=True, cmap="coolwarm")
+plt.title("Correlation Heatmap")
+plt.show()
+```
+#### Pair Plot
+
+- Explore relationships between all numeric features in a dataset using sns.pairplot()
+
+#### Example :
+```python
+# Load the iris dataset
+df = sns.load_dataset("iris")
+
+# Create pairplot
+sns.pairplot(df, hue="species")
+plt.suptitle("Pair Plot of Iris Dataset", y=1.02)
+plt.show()
+```
+
+#### Box Plot
+
+- Show distribution, median, and outliers using sns.boxplot()
+
+#### Example :
+```python
+# Load the tips dataset
+tips = sns.load_dataset("tips")
+
+# Box plot of total bill by day
+sns.boxplot(x="day", y="total_bill", data=tips)
+plt.title("Box Plot of Total Bill by Day")
+plt.show()
+```
+
+#### Violin Plot
+
+- Combine box plot and KDE to show distribution shape with sns.violinplot()
 
 
+#### Example :
+```python
+# Violin plot of total bill by day
+sns.violinplot(x="day", y="total_bill", data=tips)
+plt.title("Violin Plot of Total Bill by Day")
+plt.show()
+```
+
+####  Practical exercises with Seaborn :
+
+1 . Scatter Plot – Visualizing relationships between two variables
+
+2 . Bar Plot – Comparing average or total values across categories
+
+3 . Box Plot – Showing distribution, median, and outliers
+
+4 . Heatmap – Displaying correlations or matrix data
+
+5 . Pair Plot – Exploring relationships between multiple numerical features
 
 
+#### Introduction to Exploratory Data Analysis (EDA):
+Exploratory Data Analysis (EDA) is the process of examining, understanding, and summarizing a dataset using visual and statistical techniques before applying any modeling or machine learning.
 
+#### Purpose of EDA
+- Understand the structure of the data
 
+- Detect missing values, outliers, or errors
 
+- Discover patterns, relationships, and trends
 
+- Choose appropriate preprocessing and modeling steps
 
+#### Common EDA Techniques
+- Viewing data structure – .head(), .info(), .describe()
 
+- Handling missing values – .isnull().sum()
 
+- Univariate analysis – Histograms, box plots, value counts
 
+- Bivariate/multivariate analysis – Scatter plots, correlation, pair plots
 
+- Correlation matrix – df.corr(), visualized with heatmaps
 
+- Outlier detection – Box plots or z-score/IQR methods
 
+- Categorical analysis – Bar plots, count plots
 
+#### Understanding the EDA process  :
+The EDA process is a structured approach to analyze and understand a dataset before applying machine learning or statistical models.
 
+####bSteps in the EDA Process
+1. Understand the Data
+- Load the dataset
 
+- View the shape, structure, and data types
 
+#### Syntax:
+```python
+df.head(), df.info(), df.shape
+```
+2. Handle Missing Values
+- Identify missing values
 
+#### Syntax:
+```python
+df.isnull().sum()
+```
+- Decide whether to fill or drop them
 
+3. Univariate Analysis
+- Analyze each feature (one at a time)
 
+- Use histograms, box plots, and value counts
 
+#### Syntax :
+```python
+df['Age'].hist(), sns.boxplot(x=df['Salary'])
+```
+4. Bivariate/Multivariate Analysis
+- Explore relationships between variables (e.g., income vs education)
 
-    
+- Use scatter plots, bar plots, pair plots, correlation heatmaps
+
+#### Syntax :
+```python
+sns.pairplot(df), sns.heatmap(df.corr())
+```
+5. Detect Outliers and Anomalies
+- Use box plots or statistical methods (IQR, Z-score)
+
+- Helps clean noisy data
+
+6. Feature Engineering (Optional)
+- Create new variables, transform existing ones
+
+- Encode categorical variables
+
+7. Summarize Insights
+- Document findings: patterns, distributions, outliers, correlations
+
+- Helps shape your modeling strategy    
 
 
   
