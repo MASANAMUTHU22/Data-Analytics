@@ -2253,8 +2253,49 @@ count = df.groupby('Department').size()
 print(count)
 ```
 
+#### Aggregation functions (sum, mean, count, etc.) :
+
+Aggregation functions summarize data in a group (or entire DataFrame). When used with groupby() or directly on a column, they help extract key statistics.
+
+#### Common Aggregation Functions :
+
+| Function     | Description                       | Example                 |
+| ------------ | --------------------------------- | ----------------------- |
+| `sum()`      | Total of values                   | `df['Sales'].sum()`     |
+| `mean()`     | Average value                     | `df['Salary'].mean()`   |
+| `count()`    | Count of non-null values          | `df['Name'].count()`    |
+| `min()`      | Minimum value                     | `df['Marks'].min()`     |
+| `max()`      | Maximum value                     | `df['Marks'].max()`     |
+| `median()`   | Median (middle value)             | `df['Income'].median()` |
+| `std()`      | Standard deviation                | `df['Height'].std()`    |
+| `var()`      | Variance                          | `df['Price'].var()`     |
+| `describe()` | Summary of count, mean, std, etc. | `df['Age'].describe()`  |
 
 
+#### Example :
+```python
+import pandas as pd
+
+# Sample DataFrame
+data = {
+    'Department': ['HR', 'HR', 'IT', 'Finance', 'Finance'],
+    'Salary': [40000, 45000, 60000, 52000, 50000]
+}
+df = pd.DataFrame(data)
+
+# Total salary
+print("Total Salary:", df['Salary'].sum())
+
+# Average salary
+print("Average Salary:", df['Salary'].mean())
+
+# Count of entries
+print("Number of Employees:", df['Salary'].count())
+
+# Group by Department and aggregate
+agg = df.groupby('Department')['Salary'].agg(['sum', 'mean', 'count', 'max'])
+print("\nGroupBy Aggregation:\n", agg)
+```
 
 
 
