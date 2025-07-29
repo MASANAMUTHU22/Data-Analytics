@@ -2521,14 +2521,240 @@ sns.pairplot(df), sns.heatmap(df.corr())
 
 #### Descriptive statistics and data distribution :
 
+- Descriptive statistics summarize and describe the main features of a dataset. These include measures of central tendency (like mean, median, mode), dispersion (like variance, standard deviation), and shape (like skewness and kurtosis).
+
+- Data distribution refers to how data values are spread or distributed across a range, and it helps us understand the overall pattern of the dataset.
+
+| Concept            | Meaning                                        |
+| ------------------ | ---------------------------------------------- |
+| Mean               | Average value                                  |
+| Median             | Middle value when sorted                       |
+| Mode               | Most frequent value                            |
+| Standard Deviation | How much values vary from the mean             |
+| Variance           | Average of squared differences from the mean   |
+| Range              | Difference between max and min values          |
+| Skewness           | Indicates whether data is left or right skewed |
+| Kurtosis           | Measures the "tailedness" of the distribution  |
+
+
+#### Example :
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Sample data
+data = {'Score': [45, 67, 89, 56, 70, 90, 67, 78, 82, 65]}
+df = pd.DataFrame(data)
+
+# Descriptive statistics
+print("Descriptive Statistics:")
+print(df.describe())
+
+# Skewness and Kurtosis
+print("\nSkewness:", df['Score'].skew())
+print("Kurtosis:", df['Score'].kurt())
+
+# Histogram (distribution)
+sns.histplot(df['Score'], kde=True, bins=5)
+plt.title('Score Distribution')
+plt.xlabel('Score')
+plt.ylabel('Frequency')
+plt.show()
+```
+
+#### Correlation and covariance analysis :
+Correlation and covariance are statistical tools used to measure the relationship between two variables.
+
+#### What is Covariance?
+- Covariance measures how two variables change together.
+
+- Positive covariance: Variables increase or decrease together.
+
+- Negative covariance: One increases while the other decreases
   
-  
+#### What is Correlation?
+- Correlation measures both the strength and direction of a linear relationship between two variables.
+
+- It is a scaled version of covariance.
+
+- Correlation ranges from -1 to +1:
+
+     - +1: Strong positive relationship
+
+     - 0: No linear relationship
+
+     - -1: Strong negative relationship
+
+#### Difference Between Covariance and Correlation :
+| Feature        | Covariance          | Correlation             |
+| -------------- | ------------------- | ----------------------- |
+| Scale          | Not standardized    | Standardized (–1 to +1) |
+| Interpretation | Harder to interpret | Easier to interpret     |
+| Range          | Unbounded           | –1 to +1                |
+
+#### Example :
+```python
+import pandas as pd
+
+# Sample data
+data = {
+    'Math_Score': [90, 85, 78, 92, 88],
+    'Science_Score': [85, 80, 75, 89, 84]
+}
+
+df = pd.DataFrame(data)
+
+# Covariance
+cov_matrix = df.cov()
+print("Covariance Matrix:\n", cov_matrix)
+
+# Correlation
+corr_matrix = df.corr()
+print("\nCorrelation Matrix:\n", corr_matrix)
+```
+
+#### Practical EDA Topics
+1 . Loading and Inspecting Data
+
+2 . Handling Missing Values
+
+3 . Univariate Analysis (distribution of individual columns)
+
+4 . Bivariate and Multivariate Analysis (relationships between columns)
+
+5 . Outlier Detection
+
+6 . Data Visualization (histogram, boxplot, heatmap, pairplot)
+
+7 . Correlation and Covariance Analysis
+
+8 . Grouping and Aggregation
+
+9 . Feature Types Identification (numerical, categorical, boolean)
+
+10 .Data Cleaning (duplicates, invalid values, format issues)
 
 
+#### Advanced Data Manipulation and Analysis Techniques:
+#### Merging and joining datasets :
+#### What is Merging Datasets?
+- Merging datasets means combining two or more tables (DataFrames) based on common columns (keys) to form a single, unified dataset.
+
+- It's similar to how we do joins in SQL—matching rows from different datasets where key values are equal.
+
+#### Why Merge Datasets?
+- Combine different sources of related data.
+
+- Enrich one dataset with additional information.
+
+- Prepare data for analysis, modeling, or visualization.
+
+#### Example :
+```python
+import pandas as pd
+
+# Two DataFrames
+students = pd.DataFrame({'ID': [1, 2], 'Name': ['Alice', 'Bob']})
+marks = pd.DataFrame({'ID': [1, 2], 'Score': [85, 90]})
+
+# Merge on ID
+result = pd.merge(students, marks, on='ID')
+print(result)
+```
+#### What is Joining Datasets?
+- Joining datasets means combining columns from two DataFrames based on a common index or key column. It’s a way to enrich or complete your data by bringing in related information from another table.
+
+#### Types of Joins:
+| Join Type | Description                                                    |
+| --------- | -------------------------------------------------------------- |
+| `inner`   | Only matching rows from both DataFrames                        |
+| `left`    | All rows from the left DataFrame, match from right if possible |
+| `right`   | All rows from the right DataFrame, match from left if possible |
+| `outer`   | All rows from both DataFrames, missing filled with NaN         |
 
 
+#### Example :
+```python
+import pandas as pd
+
+df1 = pd.DataFrame({'Name': ['Alice', 'Bob']}, index=[1, 2])
+df2 = pd.DataFrame({'Score': [85, 90]}, index=[1, 2])
+
+# Join on index
+result = df1.join(df2)
+print(result)
+```
+#### Difference Between Join and Merge:
+| Feature         | `merge()`                                  | `join()`                            |
+| --------------- | ------------------------------------------ | ----------------------------------- |
+| Based on        | Common column (key)                        | Index (by default)                  |
+| Flexibility     | More options (`on`, `left_on`, `right_on`) | Less flexible                       |
+| Common use case | Joining tables like SQL joins              | Fast join on index-based DataFrames |
 
 
+#### Advanced Indexing and Selection Techniques:
+Advanced indexing allows you to access, filter, and manipulate data in more powerful and flexible ways than basic slicing.
+
+####  Label-based Indexing with .loc[] :
+- Used for selecting rows/columns by labels (names).
+
+- Supports Boolean indexing, row/column ranges, and specific value selection.
+
+#### Example :
+```python
+import pandas as pd
+
+df = pd.DataFrame({
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Score': [85, 90, 78]
+}, index=['a', 'b', 'c'])
+
+# Select row by label
+print(df.loc['b'])
+
+# Select rows and columns
+print(df.loc[['a', 'c'], ['Name']])
+```
+####  Integer-based Indexing with .iloc[]:
+- Used for selection by integer position (like array indexing).
+
+#### Example :
+```python
+# Select first row
+print(df.iloc[0])
+
+# Select first two rows and both columns
+print(df.iloc[0:2, 0:2])
+```
+#### Boolean Indexing :
+- Filtering rows based on conditions.
+
+#### Example :
+```python
+# Select rows where score > 80
+print(df[df['Score'] > 80])
+```
+
+#### Conditional Column Assignment:
+- Assign new values based on conditions.
+
+#### Example :
+```python
+df['Grade'] = ['A' if x > 80 else 'B' for x in df['Score']]
+print(df)
+```
+
+#### Summary :
+| Method     | Used For                         |
+| ---------- | -------------------------------- |
+| `loc[]`    | Label-based indexing             |
+| `iloc[]`   | Integer-position indexing        |
+| `at[]`     | Fast scalar access (label-based) |
+| `iat[]`    | Fast scalar access (int-based)   |
+| `isin()`   | Membership filtering             |
+| Boolean    | Condition-based filtering        |
+| MultiIndex | Hierarchical data                |
 
 
 
