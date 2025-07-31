@@ -2788,6 +2788,157 @@ SQL is a standard language used to communicate with relational databases. It all
 
 - Can handle data manipulation, data definition, and data control
 
+####  Basic SQL Commands:
+
+| Type             | Command        | Description                        | Example                                                 |
+| ---------------- | -------------- | ---------------------------------- | ------------------------------------------------------- |
+| Data Query       | `SELECT`       | Retrieves data from a table        | `SELECT * FROM employees;`                              |
+| Data Filtering   | `WHERE`        | Filters rows based on condition    | `SELECT * FROM employees WHERE age > 30;`               |
+| Sorting          | `ORDER BY`     | Sorts result by column             | `SELECT * FROM employees ORDER BY name;`                |
+| Data Insertion   | `INSERT INTO`  | Adds new rows to a table           | `INSERT INTO employees VALUES (1, 'John', 25);`         |
+| Data Update      | `UPDATE`       | Modifies existing data             | `UPDATE employees SET age = 26 WHERE id = 1;`           |
+| Data Deletion    | `DELETE`       | Removes rows from a table          | `DELETE FROM employees WHERE id = 1;`                   |
+| Data Aggregation | `GROUP BY`     | Groups rows for aggregation        | `SELECT dept, COUNT(*) FROM employees GROUP BY dept;`   |
+| Table Join       | `JOIN`         | Combines rows from multiple tables | `SELECT * FROM emp JOIN dept ON emp.dept_id = dept.id;` |
+| Table Creation   | `CREATE TABLE` | Creates a new table                | `CREATE TABLE students (id INT, name TEXT);`            |
+| Table Deletion   | `DROP TABLE`   | Deletes a table                    | `DROP TABLE students;`                                  |
+
+#### Overview of SQL and its applications in data analysis :
+####  Why SQL for Data Analysis?
+SQL is one of the most essential tools for data analysts because it allows you to work directly with data stored in databases — which is common in real-world scenarios.
+
+####  Key SQL Capabilities in Data Analysis:
+| Task                        | SQL Feature                     | Example Command                                                      |
+| --------------------------- | ------------------------------- | -------------------------------------------------------------------- |
+| Select specific data        | `SELECT`, `WHERE`               | `SELECT name FROM users WHERE age > 25;`                             |
+| Sort data                   | `ORDER BY`                      | `SELECT * FROM sales ORDER BY amount DESC;`                          |
+| Summarize data              | `GROUP BY`, `COUNT()`, `SUM()`  | `SELECT dept, AVG(salary) FROM emp GROUP BY dept;`                   |
+| Join multiple tables        | `INNER JOIN`, `LEFT JOIN`, etc. | `SELECT * FROM emp JOIN dept ON emp.dept_id = dept.id;`              |
+| Filter grouped data         | `HAVING`                        | `HAVING COUNT(*) > 10`                                               |
+| Create temporary views      | `WITH` or `CREATE VIEW`         | `CREATE VIEW high_salary AS SELECT * FROM emp WHERE salary > 50000;` |
+| Handle missing or NULL data | `IS NULL`, `COALESCE()`         | `SELECT COALESCE(phone, 'N/A') FROM contacts;`                       |
+
+#### Data Cleaning & Preprocessing :
+- Remove duplicates
+
+- Handle missing values (NULL)
+
+- Filter invalid or unwanted data
+
+####  Examples & Syntax:
+#### Remove Duplicates:
+
+```sql
+SELECT DISTINCT name, age FROM employees;
+```
+
+####  Handle NULL values (replace with default):
+```sql
+SELECT name, COALESCE(phone, 'N/A') AS phone FROM customers;
+```
+#### Filter out invalid records:
+```sql
+SELECT * FROM orders WHERE order_amount > 0 AND status IS NOT NULL;
+```
+#### Data Exploration (EDA):
+- Explore data distribution
+
+- Calculate summary statistics
+
+- Identify trends and patterns
+
+####  Examples & Syntax:
+####  Count total rows:
+```sql
+SELECT COUNT(*) FROM sales;
+```
+####  Find average and max salary by department:
+```sql
+SELECT department, AVG(salary) AS avg_salary, MAX(salary) AS max_salary
+FROM employees
+GROUP BY department;
+```
+
+#### Filter grouped data:
+```sql
+SELECT department, COUNT(*) AS emp_count
+FROM employees
+GROUP BY department
+HAVING emp_count > 5;
+```
+
+####  Business Reporting:
+- Create summary views
+
+- Export reports for dashboards
+
+- Use with BI tools (e.g., Power BI, Tableau)
 
 
+#### Examples & Syntax:
+#### Create a report for total monthly sales:
 
+```sql
+SELECT 
+    DATE_FORMAT(order_date, '%Y-%m') AS month,
+    SUM(order_amount) AS total_sales
+FROM orders
+GROUP BY month
+ORDER BY month;
+```
+#### View of high-value customers:
+```sql
+CREATE VIEW high_value_customers AS
+SELECT customer_id, SUM(order_amount) AS total_spent
+FROM orders
+GROUP BY customer_id
+HAVING total_spent > 10000;
+```
+####  KPI Tracking:
+Track performance metrics like revenue, churn rate, etc.
+
+#### Examples & Syntax:
+#### Total revenue and average order value:
+```sql
+SELECT 
+    SUM(order_amount) AS total_revenue,
+    AVG(order_amount) AS avg_order_value
+FROM orders;
+```
+####  Conversion rate:
+```sql
+SELECT 
+    COUNT(*) FILTER (WHERE status = 'Completed') * 100.0 / COUNT(*) AS conversion_rate
+FROM orders;
+```
+#### Data Integration:
+Combine data from multiple tables or sources
+
+#### Examples & Syntax:
+#### Inner join two tables:
+```sql
+SELECT o.order_id, c.customer_name, o.order_amount
+FROM orders o
+JOIN customers c ON o.customer_id = c.customer_id;
+```
+#### Left join (to keep all orders even if customer is missing):
+```sql
+SELECT o.order_id, c.customer_name, o.order_amount
+FROM orders o
+LEFT JOIN customers c ON o.customer_id = c.customer_id;
+```
+#### Automation:
+- Use SQL scripts in scheduled jobs
+
+- Automate ETL tasks or reports
+
+#### Examples:
+#### Schedule daily summary report:
+```sql
+SELECT 
+    CURRENT_DATE AS report_date,
+    COUNT(*) AS total_orders,
+    SUM(order_amount) AS total_sales
+FROM orders
+WHERE order_date = CURRENT_DATE;
+```
