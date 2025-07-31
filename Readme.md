@@ -2757,5 +2757,37 @@ print(df)
 | MultiIndex | Hierarchical data                |
 
 
+#### Practical exercises on advanced data manipulation  :
+
+1 . Multi-key merging and joining datasets
+
+2 . Advanced filtering with complex conditions
+
+3 . GroupBy with multiple aggregations
+
+4 . Pivot tables and reshaping with melt() and pivot()
+
+5 . Handling missing values with custom logic
+
+6 . Creating and modifying hierarchical indexes (MultiIndex)
+
+7 . Advanced use of apply(), map(), transform(), and lambda functions
+
+
+
+
+#### SQL :
+#### Introduction to SQL and Basic Queries Introduction to SQL and Basic Queries 
+#### Introduction to SQL (Structured Query Language) :
+SQL is a standard language used to communicate with relational databases. It allows you to store, retrieve, update, and delete data in databases. SQL is used in many data-driven fields such as data analytics, data science, and backend development.
+
+#### Key Features of SQL:
+- Interacts with relational databases (like MySQL, PostgreSQL, SQLite, etc.)
+
+- Works with tables, rows, and columns
+
+- Can handle data manipulation, data definition, and data control
+
+
 
 
