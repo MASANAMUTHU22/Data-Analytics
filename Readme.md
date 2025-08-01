@@ -3100,3 +3100,387 @@ SELECT * FROM Employees WHERE salary > 55000;
 | ---------------- | ------------------------------- | ------------------------------- |
 | **Local Setup**  | Advanced projects, full control | MySQL Workbench, pgAdmin        |
 | **Online Tools** | Beginners, quick practice       | SQLFiddle, DB-Fiddle, W3Schools |
+
+
+#### Basic SQL syntax and commands (SELECT, FROM, WHERE) :
+#### SELECT Statement:
+The SELECT command is used to fetch data from a database.
+
+#### Syntax:
+```sql
+SELECT column1, column2, ...
+FROM table_name;
+```
+#### Example :
+```sql
+SELECT name, age
+FROM students;
+```
+
+####  FROM Clause:
+The FROM clause specifies the table from which to retrieve the data.
+
+#### Example:
+```sql
+SELECT *
+FROM employees;
+```
+#### WHERE Clause:
+The WHERE clause filters records based on a condition.
+
+#### Syntax:
+```sql
+SELECT column1, column2
+FROM table_name
+WHERE condition;
+```
+#### Example :
+```sql
+SELECT name, salary
+FROM employees
+WHERE salary > 50000;
+```
+
+#### Hands-on practice with simple SQL queries :
+1 - Select all data from the students table.
+
+2 - Select only the name and age of all students.
+
+3 - Find students who live in Madurai.
+
+4 - List names of students who got grade A.
+
+5 - Show names and ages of students who are older than 21.
+
+6 - Find all students who live in Chennai and got grade C.
+
+7 - Select students whose age is less than or equal to 20.
+
+8 - Get the name of students who do not live in Coimbatore.
+
+9 - Find all students who got grade B or grade C.
+
+10 - Show all columns for students whose name starts with 'A'
+
+#### Working with Tables:
+#### Understanding tables, rows, and columns:
+#### What is a Table?:
+A table is like a spreadsheet in a database.
+It stores data in a structured format using rows and columns.
+
+#### Example Table: students:
+| id | name    | age | city    |
+| -- | ------- | --- | ------- |
+| 1  | Alice   | 20  | Chennai |
+| 2  | Bob     | 22  | Madurai |
+| 3  | Charlie | 21  | Salem   |
+
+#### Columns:
+- Represent fields or attributes.
+
+- Each column has a name and a data type (like text, number, date).
+
+- In the above example:
+
+    - id, name, age, and city are columns.
+
+    - Each column holds one type of data.
+
+#### Rows:
+- Represent records or entries in the table.
+
+- Each row contains data for one item/person.
+
+Example :
+| 2 | Bob | 22 | Madurai |
+
+#### Creating tables and defining data types:
+The CREATE TABLE statement is used to create a new table in the database.
+
+#### Syntax:
+```sql
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    ...
+);
+```
+
+#### Example Create a students table :
+```sql
+CREATE TABLE students (
+    id INT,
+    name VARCHAR(50),
+    age INT,
+    grade CHAR(1),
+    city VARCHAR(100)
+);
+```
+####  Explanation of Data Types:
+| Data Type    | Description                                 | Example Value          |
+| ------------ | ------------------------------------------- | ---------------------- |
+| `INT`        | Integer (whole number)                      | `20`, `100`            |
+| `VARCHAR(n)` | Text with variable length (up to `n` chars) | `'Alice'`, `'Chennai'` |
+| `CHAR(n)`    | Fixed-length text (n characters)            | `'A'`                  |
+| `DATE`       | Date values                                 | `'2025-08-01'`         |
+| `FLOAT`      | Decimal numbers                             | `85.75`                |
+
+#### Inserting, updating, and deleting data:
+#### INSERT :
+Used to add new data (rows) to a table.
+
+#### Syntax:
+```sql
+INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+```
+
+#### Example :
+```sql
+INSERT INTO students (id, name, age, grade, city)
+VALUES (6, 'Frank', 21, 'B', 'Trichy');
+```
+#### UPDATE — Modifying Existing Data:
+Used to change values in one or more rows.
+
+#### Syntax:
+```sql
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+```
+
+#### Example :
+```sql
+UPDATE students
+SET age = 22, city = 'Chennai'
+WHERE name = 'Frank';
+```
+
+#### DELETE — Removing Data:
+Used to remove rows from a table.
+
+#### Syntax :
+```sql
+DELETE FROM table_name
+WHERE condition;
+```
+
+#### Example :
+```sql
+DELETE FROM students
+WHERE id = 6;
+```
+#### Practical exercises on basic querying:
+1 - Select all records from the employees table.
+
+2 - Retrieve the name and salary columns from the employees table.
+
+3 - Find all employees who work in the HR department.
+
+4 - Show all employees whose salary is greater than 50,000.
+
+5 - List employees who live in Chennai.
+
+6 - Get the names of employees who are older than 30.
+
+7 - Find employees who joined the company in the year 2020.
+
+8 - Select employees whose names start with the letter S.
+
+9 - Find employees whose salary is between 40,000 and 60,000.
+
+10 - List employees who do not belong to the Sales department.
+
+#### Aggregation and Grouping:
+#### Using aggregate functions (COUNT, SUM, AVG, MIN, MAX) :
+
+#### COUNT() – Count Records:
+Purpose: Returns the number of rows in a table or for a specific column.
+#### Example:
+```sql
+SELECT COUNT(*) AS total_employees
+FROM employees;
+```
+Result: Number of all employees in the employees table.
+
+####  SUM() – Add Values:
+Purpose: Returns the total sum of a numeric column.
+#### Example:
+```sql
+SELECT SUM(salary) AS total_salary
+FROM employees;
+```
+Result: Total of all salaries paid.
+
+#### AVG() – Average Value:
+Purpose: Returns the average (mean) of values in a numeric column.
+#### Example :
+```sql
+SELECT AVG(age) AS average_age
+FROM employees;
+```
+Result: Average age of employees.
+
+#### MIN() – Minimum Value:
+Purpose: Returns the smallest value in a column.
+#### Example :
+```sql
+SELECT MIN(salary) AS lowest_salary
+FROM employees;
+```
+ Result: The lowest salary in the table.
+
+ #### MAX() – Maximum Value:
+ Purpose: Returns the largest value in a column.
+ #### Example :
+ ```sql
+SELECT MAX(salary) AS highest_salary
+FROM employees;
+```
+ Result: The highest salary in the table.
+
+
+ #### Grouping data with GROUP BY :
+ #### What is GROUP BY in SQL?:
+- The GROUP BY clause is used to group rows that have the same values in one or more columns.
+
+ - It is commonly used with aggregate functions like COUNT(), SUM(), AVG(), etc
+
+#### Syntax :
+```sql
+SELECT column_name, AGGREGATE_FUNCTION(column_name)
+FROM table_name
+GROUP BY column_name;
+````
+####  Example Table: employees:
+| id | name  | department | salary |
+| -- | ----- | ---------- | ------ |
+| 1  | Alice | IT         | 50000  |
+| 2  | Bob   | HR         | 40000  |
+| 3  | Carol | IT         | 55000  |
+| 4  | David | HR         | 42000  |
+| 5  | Eva   | Sales      | 45000  |
+
+####  Example 1: Total salary by department:
+```sql
+SELECT department, SUM(salary) AS total_salary
+FROM employees
+GROUP BY department;
+```
+#### Result:
+| department | total\_salary |
+| ---------- | ------------- |
+| IT         | 105000        |
+| HR         | 82000         |
+| Sales      | 45000         |
+
+
+#### Example 2: Number of employees in each department:
+```sql
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department;
+```
+#### Result:
+| department | employee\_count |
+| ---------- | --------------- |
+| IT         | 2               |
+| HR         | 2               |
+| Sales      | 1               |
+
+#### Example 3: Average salary by department:
+```sql
+SELECT department, AVG(salary) AS average_salary
+FROM employees
+GROUP BY department;
+```
+#### Result:
+| department | average\_salary |
+| ---------- | --------------- |
+| IT         | 52500           |
+| HR         | 41000           |
+| Sales      | 45000           |
+
+#### Filtering grouped data with HAVING :
+#### What is HAVING?:
+- The HAVING clause is used to filter groups created by GROUP BY.
+- You use HAVING after GROUP BY, usually with aggregate functions like SUM(), COUNT(), etc.
+- It's similar to WHERE, but WHERE filters rows before grouping, while HAVING filters groups after aggregation.
+
+#### Syntax:
+```sql
+SELECT column_name, AGG_FUNC(column_name)
+FROM table_name
+GROUP BY column_name
+HAVING condition;
+```
+#### Example : employees:
+| id | name  | department | salary |
+| -- | ----- | ---------- | ------ |
+| 1  | Alice | IT         | 50000  |
+| 2  | Bob   | HR         | 40000  |
+| 3  | Carol | IT         | 55000  |
+| 4  | David | HR         | 42000  |
+| 5  | Eva   | Sales      | 45000  |
+
+####  Example 1: Departments with total salary > 80000:
+```sql
+SELECT department, SUM(salary) AS total_salary
+FROM employees
+GROUP BY department
+HAVING SUM(salary) > 80000;
+```
+#### Explanation:
+
+- First, GROUP BY department
+
+- Then, filter only groups where SUM(salary) is greater than 80000
+
+#### Result:
+| department | total\_salary |
+| ---------- | ------------- |
+| IT         | 105000        |
+| HR         | 82000         |
+
+####  Example 2: Departments with more than 1 employee:
+```sql
+SELECT department, COUNT(*) AS emp_count
+FROM employees
+GROUP BY department
+HAVING COUNT(*) > 1;
+```
+Explanation: Only show departments that have more than 1 employee
+#### Result:
+| department | emp\_count |
+| ---------- | ---------- |
+| IT         | 2          |
+| HR         | 2          |
+
+####  Summary:
+| Clause   | Used To Filter   | Works With        |
+| -------- | ---------------- | ----------------- |
+| `WHERE`  | Before grouping  | Individual rows   |
+| `HAVING` | After `GROUP BY` | Aggregated groups |
+
+
+#### Practical exercises on data aggregation and grouping :
+1 - Find the total salary for each department.
+
+2 - Count the number of employees in each department.
+
+3 - Calculate the average salary for each department.
+
+4 - Show departments where the total salary exceeds 80,000.
+
+5 - Find departments with more than 2 employees.
+
+6 - Display the highest salary in each department.
+
+7 - List departments where the average salary is less than 50,000.
+
+8 - Find how many employees are in each department and sort by employee count descending.
+
+9 - Find departments where the minimum salary is above 40,000.
+
+10 -Show each department along with the sum and average salary, but only if the department has at least 2 employees.
